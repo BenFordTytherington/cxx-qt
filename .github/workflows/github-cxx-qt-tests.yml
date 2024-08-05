@@ -8,7 +8,7 @@ name: cxx-qt tests
 on:
   push:
   pull_request:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
     # Run daily at 01:01
     # This ensures CI still works and ensures the cache remains active
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup toolchain
         run: |
           cargo install grcov
@@ -76,12 +76,12 @@ jobs:
           LLVM_PROFILE_FILE: coverage/coverage_data-%p-%m.profraw
         run: cargo test --package cxx-qt-gen
       - name: generate-report
-        run: grcov . -s . --binary-path ./target/debug/ -t html --branch --ignore-not-existing -o ./target/debug/
+        run: grcov . -s . --binary-path ./target/debug/ -t lcov --branch --ignore-not-existing -o ./target/debug/lcov.info
       - name: upload-report
         uses: codecov/codecov-action@v4
         with:
-          directory: ./target/debug/html
-          files: index.html
+          directory: ./target/debug/
+          files: lcov.info
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
