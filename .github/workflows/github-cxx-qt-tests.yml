@@ -69,7 +69,10 @@ jobs:
       - name: build
         env:
           RUSTFLAGS: -Cinstrument-coverage
-        run: cargo build --package cxx-qt-gen
+          LLVM_PROFILE_FILE: coverage/coverage_data-%p-%m.profraw
+        run: |
+          cd crates/cxx-qt-gen
+          cargo build
       - name: test
         env:
           RUSTFLAGS: -Cinstrument-coverage
@@ -78,7 +81,7 @@ jobs:
           cd crates/cxx-qt-gen 
           cargo test --lib
       - name: generate-report
-        run: grcov . -s . --binary-path ./target/debug/ -t lcov --branch --ignore-not-existing --keep-only ./crates/ -o ./target/debug/lcov.info
+        run: grcov . -s . --binary-path ./target/debug/ -t lcov --branch --ignore-not-existing -o ./target/debug/lcov.info
       - name: upload-report
         uses: codecov/codecov-action@v4
         with:
