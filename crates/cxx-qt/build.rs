@@ -9,7 +9,7 @@ fn main() {
     let qtbuild = qt_build_utils::QtBuild::new(vec!["Core".to_owned()])
         .expect("Could not find Qt installation");
 
-    // Required for tests
+    // Required for cxx_tests
     qt_build_utils::setup_linker();
 
     let cpp_files = ["src/connection.cpp"];

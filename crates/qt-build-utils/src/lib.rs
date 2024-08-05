@@ -68,7 +68,7 @@ fn command_help_output(command: &str) -> std::io::Result<std::process::Output> {
     Command::new(command).args(["--help"]).output()
 }
 
-/// Linking executables (including tests) with Cargo that link to Qt fails to link with GNU ld.bfd,
+/// Linking executables (including cxx_tests) with Cargo that link to Qt fails to link with GNU ld.bfd,
 /// which is the default on most Linux distributions, so use GNU ld.gold, lld, or mold instead.
 /// If you are using a C++ build system such as CMake to do the final link of the executable, you do
 /// not need to call this function.

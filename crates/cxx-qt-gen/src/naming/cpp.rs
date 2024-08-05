@@ -282,7 +282,7 @@ mod tests {
     macro_rules! test_syn_types_to_cpp_types {
         [$($input_type:tt => $output_type:literal),*] => {
             let mut type_names = TypeNames::default();
-            // Add some types to the list of available types so we can use them in tests.
+            // Add some types to the list of available types so we can use them in cxx_tests.
             type_names.mock_insert("T", None, None, None);
             type_names.mock_insert("QColor", None, None, None);
             type_names.mock_insert("QPoint", None, None, None);

@@ -67,7 +67,7 @@ mod tests {
 
     /// Helper for format Rust code
     fn format_rs_source(rs_code: &str) -> String {
-        // NOTE: this error handling is pretty rough so should only used for tests
+        // NOTE: this error handling is pretty rough so should only used for cxx_tests
         let mut command = std::process::Command::new("rustfmt");
         let mut child = command
             .args(["--emit", "stdout"])

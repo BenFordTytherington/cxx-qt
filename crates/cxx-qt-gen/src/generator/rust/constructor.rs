@@ -522,7 +522,7 @@ mod tests {
     }
 
     // This is called by the `multiple_constructors` test so we don't have to
-    // assert this in two separate tests.
+    // assert this in two separate cxx_tests.
     fn assert_empty_constructor_blocks(
         blocks: &GeneratedRustFragment,
         namespace_attr: &TokenStream,
