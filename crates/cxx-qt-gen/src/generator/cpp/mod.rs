@@ -17,7 +17,6 @@ pub mod qobject;
 pub mod signal;
 pub mod threading;
 
-// Test comment
 mod utils;
 
 use std::collections::BTreeSet;
