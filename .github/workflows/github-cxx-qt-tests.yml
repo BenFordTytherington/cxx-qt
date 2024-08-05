@@ -56,6 +56,35 @@ jobs:
       - name: shellcheck
         run: shellcheck scripts/*.sh
 
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup toolchain
+        run: |
+          cargo install grcov
+          rustup component add llvm-tools
+      - name: build
+        env:
+          RUSTFLAGS: -Cinstrument-coverage
+        run: cargo build --package cxx-qt-gen
+      - name: test
+        env:
+          RUSTFLAGS: -Cinstrument-coverage
+          LLVM_PROFILE_FILE: coverage/coverage_data-%p-%m.profraw
+        run: cargo test --package cxx-qt-gen
+      - name: generate-report
+        run: grcov . -s . --binary-path ./target/debug/ -t html --branch --ignore-not-existing -o ./target/debug/
+      - name: upload-report
+        uses: codecov/codecov-action@v4
+        with:
+          directory: ./target/debug/html
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+
+
   build:
     # Run after pre checks
     needs: [clang_format, license_check, rust_format_check, markdown_lint]
