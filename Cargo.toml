@@ -16,9 +16,9 @@ members = [
     "examples/demo_threading/rust",
     "examples/qml_features/rust",
     "examples/qml_minimal/rust",
-    "cxx_tests/basic_cxx_only/rust",
-    "cxx_tests/basic_cxx_qt/rust",
-    "cxx_tests/qt_types_standalone/rust",
+    "tests/basic_cxx_only/rust",
+    "tests/basic_cxx_qt/rust",
+    "tests/qt_types_standalone/rust",
 ]
 resolver = "2"
 

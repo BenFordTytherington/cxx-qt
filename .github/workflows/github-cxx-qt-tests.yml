@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
-name: cxx-qt cxx_tests
+name: cxx-qt tests
 on:
   push:
   pull_request:
@@ -238,7 +238,7 @@ jobs:
         path: ${{ matrix.workspace }}
     # Ensure clippy and rustfmt is installed, they should come from github runner
     #
-    # Note we still need rustfmt for the cxx-qt-gen cxx_tests
+    # Note we still need rustfmt for the cxx-qt-gen tests
     - name: "Install Rust toolchain"
       run: rustup component add clippy rustfmt
 

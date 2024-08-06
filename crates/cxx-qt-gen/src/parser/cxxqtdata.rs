@@ -283,7 +283,7 @@ mod tests {
     use quote::format_ident;
     use syn::{parse_quote, ItemMod};
 
-    /// The QObject ident used in these cxx_tests as the ident that already
+    /// The QObject ident used in these tests as the ident that already
     /// has been found.
     fn qobject_ident() -> Ident {
         format_ident!("MyObject")

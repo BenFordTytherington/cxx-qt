@@ -44,7 +44,7 @@ impl QObjectNames {
         })
     }
 
-    // Only for mocking in cxx_tests
+    // Only for mocking in tests
     #[cfg(test)]
     pub fn from_idents(ident_left: Ident, ident_right: Ident) -> Self {
         Self {

@@ -77,7 +77,7 @@ pub trait CxxQtType {
 /// #[derive(Default)]
 /// pub struct MyStructRust;
 ///
-/// # // Note that we need a fake main function for doc cxx_tests to build.
+/// # // Note that we need a fake main function for doc tests to build.
 /// # fn main() {}
 /// ```
 //
@@ -134,7 +134,7 @@ pub trait Locking {
 ///     }
 /// }
 ///
-/// # // Note that we need a fake main function for doc cxx_tests to build.
+/// # // Note that we need a fake main function for doc tests to build.
 /// # fn main() {}
 /// ```
 pub trait Threading: Locking + Sized {
@@ -216,7 +216,7 @@ pub trait Threading: Locking + Sized {
 ///     }
 /// }
 ///
-/// # // Note that we need a fake main function for doc cxx_tests to build.
+/// # // Note that we need a fake main function for doc tests to build.
 /// # fn main() {}
 /// ```
 ///
@@ -326,7 +326,7 @@ pub trait Constructor<Arguments>: CxxQtType {
 ///     }
 /// }
 ///
-/// # // Note that we need a fake main function for doc cxx_tests to build.
+/// # // Note that we need a fake main function for doc tests to build.
 /// # fn main() {}
 /// ```
 // TODO: Once the QObject type is available in the cxx-qt crate, also auto-generate a default

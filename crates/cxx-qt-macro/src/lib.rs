@@ -38,7 +38,7 @@ use cxx_qt_gen::{write_rust, GeneratedRustBlocks, Parser};
 ///     }
 /// }
 ///
-/// # // Note that we need a fake main for doc cxx_tests to build
+/// # // Note that we need a fake main for doc tests to build
 /// # fn main() {}
 /// ```
 #[proc_macro_attribute]
@@ -82,7 +82,7 @@ pub fn bridge(args: TokenStream, input: TokenStream) -> TokenStream {
 /// #[derive(Default)]
 /// pub struct MyObjectRust;
 ///
-/// # // Note that we need a fake main for doc cxx_tests to build
+/// # // Note that we need a fake main for doc tests to build
 /// # fn main() {}
 /// ```
 ///
@@ -108,7 +108,7 @@ pub fn bridge(args: TokenStream, input: TokenStream) -> TokenStream {
 /// #[derive(Default)]
 /// pub struct MyModelRust;
 ///
-/// # // Note that we need a fake main for doc cxx_tests to build
+/// # // Note that we need a fake main for doc tests to build
 /// # fn main() {}
 /// ```
 #[proc_macro_attribute]

@@ -40,7 +40,7 @@ pub mod qobject {
         #[qproperty(QString, string_map)]
         #[qproperty(QString, string_set)]
         #[qproperty(QString, string_vector)]
-        // Expose as a Q_PROPERTY so that QML cxx_tests can ensure that QVariantMap works
+        // Expose as a Q_PROPERTY so that QML tests can ensure that QVariantMap works
         #[qproperty(QMap_QString_QVariant, map)]
         type RustContainers = super::RustContainersRust;
 

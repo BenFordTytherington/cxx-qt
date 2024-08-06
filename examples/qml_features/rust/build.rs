@@ -46,7 +46,7 @@ fn main() {
             ..Default::default()
         })
         // custom_object.cpp/h need to be handled here rather than CMakeLists.txt,
-        // otherwise linking cargo cxx_tests fails because the symbols from those files are not found.
+        // otherwise linking cargo tests fails because the symbols from those files are not found.
         .cc_builder(|cc| {
             cc.include("../cpp");
             cc.file("../cpp/custom_object.cpp");

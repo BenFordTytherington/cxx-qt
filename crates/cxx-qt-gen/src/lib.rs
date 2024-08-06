@@ -24,6 +24,11 @@ pub use writer::{cpp::write_cpp, rust::write_rust};
 
 pub use syn::{Error, Result};
 
+/// Docs here
+pub fn my_fn() {
+    println!("Test fn!")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -67,7 +72,7 @@ mod tests {
 
     /// Helper for format Rust code
     fn format_rs_source(rs_code: &str) -> String {
-        // NOTE: this error handling is pretty rough so should only used for cxx_tests
+        // NOTE: this error handling is pretty rough so should only used for tests
         let mut command = std::process::Command::new("rustfmt");
         let mut child = command
             .args(["--emit", "stdout"])

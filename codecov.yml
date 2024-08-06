@@ -1,38 +1,12 @@
+# SPDX-FileCopyrightText: 2022 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
+# SPDX-FileContributor: Ben Ford <ben.ford@kdab.com>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 coverage:
   status:
     project: true
     patch: true
 
 ignore:
-  - "./cxx_tests/" # This got included for some reason in either build or test and is not relevant to unit tests
-
-component_management: # Allows separate statistics and reports for individual paths
-  default_rules:  # default rules that will be inherited by all components
-    statuses:
-      - type: project # in this case every component that doesn't have a status defined will have a project type one
-        target: auto
-        branches:
-          - "!main"
-  individual_components:
-    - component_id: module-cxx-qt
-      name: cxx-qt
-      paths:
-        - crates/cxx-qt/**
-    - component_id: module-cxx-qt-build
-      name: cxx-qt-build
-      paths:
-        - crates/cxx-qt-build/**
-        - crates/qt-build-utils/**
-    - component_id: module-cxx-qt-gen
-      name: cxx-qt-gen
-      paths:
-        - crates/cxx-qt-gen/**
-    - component_id: module-cxx-qt-lib
-      name: cxx-qt-lib
-      paths:
-        - crates/cxx-qt-lib/**
-        - crates/cxx-qt-lib-extras/**
-    - component_id: module-cxx-qt-macro
-      name: cxx-qt-macro
-      paths:
-        - crates/cxx-qt-macro/**
+  - "./tests/" # This got included for some reason in either build or test and is not relevant to unit tests
