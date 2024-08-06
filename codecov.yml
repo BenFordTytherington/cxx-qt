@@ -5,8 +5,12 @@
 
 coverage:
   status:
-    project: true
+    project:
+      default:
+        target: 90%
+        threshold: 2%
     patch: true
+
 
 ignore:
   - "./tests/" # This got included for some reason in either build or test and is not relevant to unit tests
