@@ -407,7 +407,7 @@ impl<Tz: chrono::TimeZone> TryFrom<chrono::DateTime<Tz>> for QDateTime {
         Ok(QDateTime::from_date_and_time_time_zone(
             &QDate::from(value.date_naive()),
             &QTime::try_from(value.time())?,
-            tz.as_ref().ok_or_else(|| "Could not construct timezone")?,
+            tz.as_ref().ok_or("Could not construct timezone")?,
         ))
     }
 }
